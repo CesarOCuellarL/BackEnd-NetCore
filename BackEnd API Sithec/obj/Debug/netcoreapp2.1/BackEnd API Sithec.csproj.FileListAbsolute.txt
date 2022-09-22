@@ -1,0 +1,14 @@
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\bin\Debug\netcoreapp2.1\BackEnd API Sithec.deps.json
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\bin\Debug\netcoreapp2.1\BackEnd API Sithec.runtimeconfig.json
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\bin\Debug\netcoreapp2.1\BackEnd API Sithec.runtimeconfig.dev.json
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\bin\Debug\netcoreapp2.1\BackEnd API Sithec.dll
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\bin\Debug\netcoreapp2.1\BackEnd API Sithec.pdb
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\obj\Debug\netcoreapp2.1\BackEnd API Sithec.csprojAssemblyReference.cache
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\obj\Debug\netcoreapp2.1\BackEnd API Sithec.csproj.CoreCompileInputs.cache
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\obj\Debug\netcoreapp2.1\BackEnd API Sithec.RazorAssemblyInfo.cache
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\obj\Debug\netcoreapp2.1\BackEnd API Sithec.RazorAssemblyInfo.cs
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\obj\Debug\netcoreapp2.1\BackEnd API Sithec.AssemblyInfoInputs.cache
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\obj\Debug\netcoreapp2.1\BackEnd API Sithec.AssemblyInfo.cs
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\obj\Debug\netcoreapp2.1\BackEnd API Sithec.RazorTargetAssemblyInfo.cache
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\obj\Debug\netcoreapp2.1\BackEnd API Sithec.dll
+C:\Users\Ceslu\OneDrive\Documentos\Visual Studio 2017\Projects\BackEnd API Sithec\BackEnd API Sithec\obj\Debug\netcoreapp2.1\BackEnd API Sithec.pdb
