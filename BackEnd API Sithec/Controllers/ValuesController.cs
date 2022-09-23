@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using webapi_csharp.Modelos;
+using webapi_csharp.Repositorios;
 
 namespace BackEnd_API_Sithec.Controllers
 {
@@ -10,36 +12,26 @@ namespace BackEnd_API_Sithec.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Welcome");
+            RPValue rpCli = new RPValue();
+            return Ok(rpCli.ObtenerValues());
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [HttpGet("Operaciones")]
+        public IActionResult Resultados()
         {
-            return "value";
+            RPValue rpCli = new RPValue();
+            return Ok(rpCli.Operaciones());
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("agregar")]
+        public IActionResult AgregarValue(Value nuevoValue)
         {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            RPValue rpCli = new RPValue();
+            rpCli.Agregar(nuevoValue);
+            return CreatedAtAction(nameof(AgregarValue), nuevoValue);
         }
     }
 }

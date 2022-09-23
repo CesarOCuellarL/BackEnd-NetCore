@@ -32,8 +32,17 @@ namespace webapi_csharp.Repositorios
 
         public void Editar(Humano editarHumano)
         {
-            int id = editarHumano.Id;
-            var Humano = _listaHumanos.Where(cli => cli.Id == id);
+            int id = editarHumano.Id - 1;
+            string nombre = editarHumano.Nombre;
+            string sexo = editarHumano.Sexo;
+            int edad = editarHumano.Edad;
+            double altura = editarHumano.Altura;
+            int peso = editarHumano.Peso;
+            _listaHumanos.ElementAt<Humano>(id).Nombre = nombre;
+            _listaHumanos.ElementAt<Humano>(id).Sexo = sexo;
+            _listaHumanos.ElementAt<Humano>(id).Edad = edad;
+            _listaHumanos.ElementAt<Humano>(id).Altura = altura;
+            _listaHumanos.ElementAt<Humano>(id).Peso = peso;
         }
     }
 }
