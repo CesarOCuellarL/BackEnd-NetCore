@@ -1,6 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using webapi_csharp.Modelos;
 using webapi_csharp.Repositorios;
+using webapi_csharp.DB;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd_API_Sithec.Controllers
 {
@@ -8,44 +13,79 @@ namespace BackEnd_API_Sithec.Controllers
     [ApiController]
     public class HumanoController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult Get()
+        private readonly DBConnection context;
+
+        public HumanoController(DBConnection context)
+        {
+            this.context = context;
+        }
+
+        [HttpGet("arrayhumano")]
+        public IActionResult Get2()
         {
             RPHumano rpCli = new RPHumano();
             return Ok(rpCli.ObtenerHumanos());
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        [HttpGet]
+        public IEnumerable<Humano> Get()
         {
-            RPHumano rpCli = new RPHumano();
+            return context.Humano.ToList();
+        }
 
-            var cliRet = rpCli.ObtenerHumano(id);
+        [HttpGet("{id}")]
+        public Humano Get(int id)
+        {
+            var humano = context.Humano.FirstOrDefault(h => h.Id == id);
+            return humano;
+        }
 
-            if (cliRet == null)
+        [HttpPost]
+        public ActionResult Post([FromBody]Humano humano)
+        {
+            try
             {
-                var nf = NotFound("El Humano " + id.ToString() + " no existe.");
-                return nf;
+                context.Humano.Add(humano);
+                context.SaveChanges();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult Put(int id, [FromBody]Humano humano)
+        {
+            if(humano.Id == id)
+            { 
+                context.Entry(humano).State = EntityState.Modified;
+                context.SaveChanges();
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
             }
 
-            return Ok(cliRet);
         }
 
-        [HttpPost("agregar")]
-        public IActionResult AgregarHumano(Humano nuevoHumano)
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
         {
-            RPHumano rpCli = new RPHumano();
-            rpCli.Agregar(nuevoHumano);
-            return CreatedAtAction(nameof(AgregarHumano), nuevoHumano);
+            var humano = context.Humano.FirstOrDefault(h => h.Id == id);
+            if (humano != null)
+            {
+                context.Humano.Remove(humano);
+                context.SaveChanges();
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
-        [HttpPut("modificar")]
-        public IActionResult ModificarHumano(Humano editarHumano)
-        {
-            RPHumano rpCli = new RPHumano();
-
-            rpCli.Editar(editarHumano);
-            return CreatedAtAction(nameof(ModificarHumano), editarHumano);
-        }
     }
 }

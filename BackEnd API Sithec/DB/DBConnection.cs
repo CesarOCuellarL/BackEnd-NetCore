@@ -3,32 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using webapi_csharp.Modelos;
 
-namespace sqlConnectionServer
+namespace webapi_csharp.DB
 {
-    public class DBConnection
+    public class DBConnection:DbContext
     {
-        //Cadena de Conexion
-        public SqlConnection connection = new SqlConnection("Data Source=Localhost;Initial Catalog = API Sithec; Integrated Security=True;");
-
-    
-        //Metodo para abrir la conexion
-        public void open()
+        public DBConnection(DbContextOptions<DBConnection> options):base(options)
         {
-            try
-            {
-                connection.Open();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("error al abrir BD ", ex.Message);
-            }
+
         }
 
-            //Metodo para cerrar la conexion
-        public void close()
-        {
-            connection.Close();
-        }
+        public DbSet<Humano> Humano { get; set; }
     }
 }

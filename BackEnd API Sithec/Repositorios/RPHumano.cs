@@ -1,16 +1,24 @@
 ﻿using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using webapi_csharp.Modelos;
+
 
 namespace webapi_csharp.Repositorios
 {
     public class RPHumano
     {
+       
         public static List<Humano> _listaHumanos = new List<Humano>()
         {
             new Humano() { Id = 1, Nombre = "Cesar Cuellar", Sexo = "Masculino", Edad = 23, Altura= 1.73 , Peso = 88 },
             new Humano() { Id = 2, Nombre = "Osiel Luevano", Sexo = "Masculino", Edad = 23, Altura= 1.73 , Peso = 88 },
             new Humano() { Id = 3, Nombre = "Cesar Luevano", Sexo = "Masculino", Edad = 23, Altura= 1.73 , Peso = 88 }
+        };
+        
+        public static List<Humano> _listaHumanos2 = new List<Humano>()
+        {
+             
         };
 
         public IEnumerable<Humano> ObtenerHumanos()
@@ -20,7 +28,7 @@ namespace webapi_csharp.Repositorios
 
         public IEnumerable<Humano> ObtenerHumanos2()
         {
-            return _listaHumanos;
+            return _listaHumanos2;
         }
 
         public Humano ObtenerHumano(int id)
