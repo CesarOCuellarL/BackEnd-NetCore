@@ -18,6 +18,11 @@ namespace webapi_csharp.Repositorios
             return _listaHumanos;
         }
 
+        public IEnumerable<Humano> ObtenerHumanos2()
+        {
+            return _listaHumanos;
+        }
+
         public Humano ObtenerHumano(int id)
         {
             var Humano = _listaHumanos.Where(cli => cli.Id == id);
